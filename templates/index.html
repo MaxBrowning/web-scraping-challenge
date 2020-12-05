@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Information on Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <!-- Creates the Overall Grid -->
+  <div class="container">
+
+    <!-- Row 1 | Title & Scrape Button -->
+    <div class="row" style="background: lightgray; padding: 40px; text-align: center">
+        <div class="col-md-12 title-button">
+            <strong><h1 style="font-size: 100px">Mission to Mars</h1></strong>
+            <p><a role="button" href="/scrape" class="btn btn-primary">Scrape New Data</a></p>
+        </div>
+    </div>
+
+    <!-- Row 2 | Mars News -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Latest Mars News</h2>
+            <p>{{ mars_data.news_title }}</p>
+            <p>{{ mars_data.news_p }}</p>
+        </div>
+    </div>
+
+    <!-- Row 3 | Featured Image & Facts Table -->
+    <div class="row">
+        <div class="col-md-8">
+          <h2>Featured Mars Image</h2>
+          <img src="https://www.jpl.nasa.gov/{{ mars_data.feat_img }}" alt='featured image from jpl.nasa.gov' style='width: 100%'>
+        </div>
+        <div class="col-md-4">
+          <h2>Mars Facts</h2>
+          <table>
+              {{ mars_data.mars_facts_table }}
+          </table>
+        </div>
+
+    <!-- Row 4 | Heading for Hemispheres and HR -->
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="text-align: center">Mars Hemispheres</h3>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Rows 5 & 6 | Hemisphere Images in 2x2 grid -->
+    <section>
+
+        <div class="row">
+          <div class='col-md-6'>
+            <img src="https://astrogeology.usgs.gov{{ mars_data.hemisphere_image_urls[0].get('img_url') }}" alt='image of Mars first hemisphere' style='width: 100%'>
+            <h4>{{ mars_data.hemisphere_image_urls[0].get('title') }}</h4>
+          </div>
+          <div class='col-md-6'>
+            <img src="https://astrogeology.usgs.gov{{ mars_data.hemisphere_image_urls[1].get('img_url') }}" alt='image of Mars second hemisphere' style='width: 100%'>
+            <h4>{{ mars_data.hemisphere_image_urls[1].get('title') }}</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class='col-md-6'>
+            <img src="https://astrogeology.usgs.gov{{ mars_data.hemisphere_image_urls[2].get('img_url') }}" alt='image of Mars third hemisphere' style='width: 100%'>
+            <h4>{{ mars_data.hemisphere_image_urls[2].get('title') }}</h4>
+          </div>
+          <div class='col-md-6'>
+            <img src="https://astrogeology.usgs.gov{{ mars_data.hemisphere_image_urls[3].get('img_url') }}" alt='image of Mars fourth hemisphere' style='width: 100%'>
+            <h4>{{ mars_data.hemisphere_image_urls[3].get('title') }}</h4>
+          </div>
+        </div>
+
+      </section>
+
+
+</body>
+
+</html>
