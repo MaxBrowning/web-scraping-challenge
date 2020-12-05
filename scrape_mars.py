@@ -4,6 +4,7 @@ from splinter import Browser
 import requests
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
+import time
 
 def init_browser():
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -15,6 +16,8 @@ def scrape():
     ### VISIT MARS NEWS ###
     url = 'https://mars.nasa.gov/news/'
     browser.visit(url)
+
+    time.sleep(1)
 
     # Scrape page into Soup
     html = browser.html
