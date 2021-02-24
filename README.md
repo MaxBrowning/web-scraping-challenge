@@ -12,5 +12,3 @@ This project utilized Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Spli
 ![middle third of webpage](https://github.com/MaxBrowning/web-scraping-challenge/blob/main/images/web_scraping_site_image_2.JPG)
 ![bottom third of webpage](https://github.com/MaxBrowning/web-scraping-challenge/blob/main/images/web_scraping_site_image_3.JPG)
 
------
-Web Scraping Homework for Butler Data Analysis Bootcamp
